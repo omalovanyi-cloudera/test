@@ -1,34 +1,50 @@
-# Hello World Web App
+# Static Pages Site
 
-Open this app in **Chrome or Safari on your iPhone** to see the Hello World start page.
+A simple static website hosted on **GitHub Pages**. Each page is a separate HTML file in the `docs/` folder.
 
-## Works right now (no setup)
+## Pages
 
-**https://cdn.jsdelivr.net/gh/omalovanyi-cloudera/test@main/docs/index.html**
+| Page | File | Description |
+|------|------|-------------|
+| Home | [docs/index.html](docs/index.html) | Links to all pages |
+| To-Do List | [docs/todo.html](docs/todo.html) | Your tasks for now and later |
 
-Copy that link into Chrome or Safari on your iPhone.
+## Live URL
 
-## GitHub Pages link (needs one-time setup)
-
-The repo is named `test`, so the GitHub Pages URL is:
+After GitHub Pages is enabled:
 
 **https://omalovanyi-cloudera.github.io/test/**
 
-> **Important:** `https://omalovanyi-cloudera.github.io/` (without `/test/`) will show a 404 unless you create a separate repo named `omalovanyi-cloudera.github.io`.
+- Home: `https://omalovanyi-cloudera.github.io/test/`
+- To-Do: `https://omalovanyi-cloudera.github.io/test/todo.html`
 
-### Enable GitHub Pages (2 minutes)
+## Enable GitHub Pages (one time)
 
 1. Open [Settings → Pages](https://github.com/omalovanyi-cloudera/test/settings/pages)
 2. Set **Source** to **GitHub Actions**
 3. Re-run the [Deploy workflow](https://github.com/omalovanyi-cloudera/test/actions/workflows/pages.yml)
 
-See also: [Issue #3](https://github.com/omalovanyi-cloudera/test/issues/3)
+## Add a new page
 
-## One-click Netlify deploy (optional)
+1. Create a new file in `docs/`, e.g. `docs/notes.html`
+2. Link to it from `docs/index.html`
+3. Push to `main` — the site updates automatically
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/omalovanyi-cloudera/test)
+## Edit your to-do list
 
-Click the button, connect GitHub, and Netlify will give you a live URL like `your-app.netlify.app`.
+Open `docs/todo.html` and change the task text, or check items off in your browser (saved on your device).
+
+## Project structure
+
+```
+docs/
+├── index.html      # Home page
+├── todo.html       # To-do list
+├── styles.css      # Shared styles
+└── .nojekyll       # Required for GitHub Pages
+.github/workflows/
+└── pages.yml       # Auto-deploy on push
+```
 
 ## Local preview
 
@@ -36,4 +52,4 @@ Click the button, connect GitHub, and Netlify will give you a live URL like `you
 python3 -m http.server 8080 --directory docs
 ```
 
-Then open `http://localhost:8080`.
+Open `http://localhost:8080`.

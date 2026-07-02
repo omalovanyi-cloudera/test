@@ -1,0 +1,168 @@
+/* Shared styles for static pages */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #f2f2f7;
+  color: #1c1c1e;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  padding: max(16px, env(safe-area-inset-top)) 16px max(24px, env(safe-area-inset-bottom));
+}
+
+a {
+  color: #007aff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+header {
+  margin-bottom: 24px;
+}
+
+header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+header p {
+  color: #636366;
+  margin-top: 6px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  margin-bottom: 16px;
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.page-list {
+  list-style: none;
+}
+
+.page-list li {
+  border-bottom: 1px solid #e5e5ea;
+}
+
+.page-list li:last-child {
+  border-bottom: none;
+}
+
+.page-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 4px;
+  color: #1c1c1e;
+  font-weight: 500;
+}
+
+.page-list a:hover {
+  text-decoration: none;
+  color: #007aff;
+}
+
+.page-list span {
+  color: #8e8e93;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.todo-list {
+  list-style: none;
+}
+
+.todo-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e5ea;
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.todo-item input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  accent-color: #007aff;
+  flex-shrink: 0;
+}
+
+.todo-item label {
+  flex: 1;
+  cursor: pointer;
+}
+
+.todo-item.done label {
+  color: #8e8e93;
+  text-decoration: line-through;
+}
+
+.todo-meta {
+  font-size: 0.8rem;
+  color: #8e8e93;
+  margin-top: 4px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: #eef4ff;
+  color: #007aff;
+}
+
+.badge.now {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+footer {
+  margin-top: 32px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #8e8e93;
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: #636366;
+  margin-top: 12px;
+}

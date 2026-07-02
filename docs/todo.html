@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2f2f7">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <a class="back-link" href="index.html">← Home</a>
+
+    <header>
+      <h1>To-Do List</h1>
+      <p>Updated: <span id="updated-date">now</span></p>
+    </header>
+
+    <section class="card">
+      <h2>Now <span class="badge now">today</span></h2>
+      <ul class="todo-list" id="todo-list">
+        <!-- Edit these items directly in this file, or check them off in your browser -->
+        <li class="todo-item" data-id="1">
+          <input type="checkbox" id="task-1">
+          <label for="task-1">
+            Enable GitHub Pages in repo settings
+            <div class="todo-meta">Settings → Pages → GitHub Actions</div>
+          </label>
+        </li>
+        <li class="todo-item" data-id="2">
+          <input type="checkbox" id="task-2">
+          <label for="task-2">
+            Open the site on iPhone
+            <div class="todo-meta">Chrome or Safari</div>
+          </label>
+        </li>
+        <li class="todo-item" data-id="3">
+          <input type="checkbox" id="task-3">
+          <label for="task-3">
+            Add my own tasks to todo.html
+            <div class="todo-meta">Edit the file in GitHub or locally</div>
+          </label>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Later</h2>
+      <ul class="todo-list">
+        <li class="todo-item" data-id="4">
+          <input type="checkbox" id="task-4">
+          <label for="task-4">Create a notes page (notes.html)</label>
+        </li>
+        <li class="todo-item" data-id="5">
+          <input type="checkbox" id="task-5">
+          <label for="task-5">Add more static pages to docs/</label>
+        </li>
+      </ul>
+    </section>
+
+    <footer>Checks are saved in your browser on this device</footer>
+  </div>
+
+  <script>
+    const STORAGE_KEY = "todo-checks-v1";
+
+    function loadChecks() {
+      try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+      } catch {
+        return {};
+      }
+    }
+
+    function saveChecks(checks) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(checks));
+    }
+
+    function applyChecks() {
+      const checks = loadChecks();
+      document.querySelectorAll(".todo-item").forEach((item) => {
+        const id = item.dataset.id;
+        const checkbox = item.querySelector('input[type="checkbox"]');
+        if (checks[id]) {
+          checkbox.checked = true;
+          item.classList.add("done");
+        }
+      });
+    }
+
+    document.querySelectorAll('.todo-item input[type="checkbox"]').forEach((checkbox) => {
+      checkbox.addEventListener("change", (event) => {
+        const item = event.target.closest(".todo-item");
+        const id = item.dataset.id;
+        const checks = loadChecks();
+        checks[id] = event.target.checked;
+        saveChecks(checks);
+        item.classList.toggle("done", event.target.checked);
+      });
+    });
+
+    document.getElementById("updated-date").textContent =
+      new Date().toLocaleDateString(undefined, { dateStyle: "medium" });
+
+    applyChecks();
+  </script>
+</body>
+</html>
