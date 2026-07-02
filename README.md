@@ -2,11 +2,17 @@
 
 Open this app in **Chrome on your iPhone** to see the Hello World start page.
 
-## Live link
+## Live link (open in Chrome on iPhone)
+
+**https://cdn.jsdelivr.net/gh/omalovanyi-cloudera/test@main/index.html**
+
+Copy that URL into Chrome on your iPhone to see the Hello World start page.
+
+### Optional: GitHub Pages
+
+After enabling Pages in [repo settings](https://github.com/omalovanyi-cloudera/test/settings/pages) (Source: **GitHub Actions**), the app will also be available at:
 
 **https://omalovanyi-cloudera.github.io/test/**
-
-Open that URL in Chrome on your iPhone.
 
 ## Local preview
 
