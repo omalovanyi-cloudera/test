@@ -1,34 +1,33 @@
-# HelloWorldApp
+# Hello World Web App
 
-A minimal **SwiftUI** iPhone app that displays "Hello, World!".
+Open this app in **Chrome on your iPhone** to see the Hello World start page.
 
-## Requirements
+## Live link
 
-- macOS with **Xcode 15+**
-- iOS 17+ (simulator or device)
+**https://omalovanyi-cloudera.github.io/test/**
 
-## Run the app
+Open that URL in Chrome on your iPhone.
 
-1. Open `HelloWorldApp.xcodeproj` in Xcode.
-2. Select an iPhone simulator (e.g. iPhone 16).
-3. Press **Run** (⌘R).
+## Local preview
 
-You should see a wave icon and **Hello, World!** on screen.
+```bash
+python3 -m http.server 8080
+```
+
+Then open `http://localhost:8080` in your browser.
 
 ## Project structure
 
 ```
-HelloWorldApp/
-├── HelloWorldApp.swift   # App entry point
-├── ContentView.swift     # Main UI
-└── Assets.xcassets/      # App icon & accent color
-HelloWorldApp.xcodeproj/  # Xcode project
+index.html              # Mobile-friendly Hello World start page
+HelloWorldApp/          # Optional native SwiftUI version (Xcode)
+HelloWorldApp.xcodeproj/
 ```
 
-## What the UI shows
+## What you see
 
 - A waving hand icon
 - **Hello, World!** title
-- A short subtitle
+- A short subtitle confirming the page loaded in Chrome
 
-Built with SwiftUI for iPhone.
+The web page is optimized for iPhone screens with safe-area padding and a clean mobile layout.
